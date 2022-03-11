@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "forecast_app"
+version = "0.1.0"
+description = ""
+authors = ["Svennson17 <kiryl.shvedau@gmail.com>"]
+packages = [
+  { include = "basic_code" },
+]
+
+
+[tool.poetry.dependencies]
+python = "^3.9"
+prompt = "^0.4.1"
+requests = "^2.27.1"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+basic-code = "basic_code.scripts.startfile:main"
