@@ -1,6 +1,6 @@
 import prompt
 import requests
-from basic_code.const import api_key2
+from basic_code.const import key2
 
 
 def determine_city():
@@ -23,7 +23,7 @@ def verify_city(city):
     url = "https://api.apilayer.com/geo/city/name/{}".format(city)
     payload = {}
     headers = {
-        "apikey": api_key2
+        "apikey": key2
     }
     response = requests.get(url, headers=headers, data=payload)
     status_code = response.status_code

@@ -1,5 +1,3 @@
-
-
 def format_full_response(item):
     print(
         "The {}'s coordinates are {} lon, {} lat.".format(

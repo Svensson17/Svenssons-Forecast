@@ -12,6 +12,7 @@ packages = [
 python = "^3.9"
 prompt = "^0.4.1"
 requests = "^2.27.1"
+pytest = "^7.1.0"
 
 [tool.poetry.dev-dependencies]
 
