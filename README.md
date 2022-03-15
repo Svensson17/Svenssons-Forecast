@@ -1,1 +1,1 @@
-jhjkhhh
+The forecast in short and full version by API.

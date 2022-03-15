@@ -2,6 +2,7 @@ import requests
 from basic_code.determine_data import determine_city, determine_forecast_type
 from basic_code.formatter import format_full_response, format_short_response
 import prompt
+from basic_code.const import api_key1
 
 
 def download():
@@ -9,9 +10,8 @@ def download():
     while True:
         city = determine_city()
         forecast_type = determine_forecast_type(city)
-        api_key = '609bbe56a6793ee128b3e9e72e9b4f97'
         response_api = requests.get(
-            "http://api.openweathermap.org/data/2.5/weather?q={0}&appid={1}&units=metric".format(city, api_key)
+            "http://api.openweathermap.org/data/2.5/weather?q={0}&appid={1}&units=metric".format(city, api_key1)
         )
         current_inf = response_api.json()
         if forecast_type == 'short':

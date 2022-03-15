@@ -1,5 +1,6 @@
 import prompt
 import requests
+from basic_code.const import api_key2
 
 
 def determine_city():
@@ -22,8 +23,8 @@ def verify_city(city):
     url = "https://api.apilayer.com/geo/city/name/{}".format(city)
     payload = {}
     headers = {
-        "apikey": "ycvkBrGzaM6Dwzq5hXGbBzh6BCsj9G6s"
+        "apikey": api_key2
     }
-    response = requests.request("GET", url, headers=headers, data=payload)
+    response = requests.get(url, headers=headers, data=payload)
     status_code = response.status_code
     return True if status_code == 200 else False
