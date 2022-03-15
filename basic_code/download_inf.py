@@ -1,5 +1,5 @@
 import requests
-from basic_code.determine_data import determine_city, determine_forecast_type, verify_city
+from basic_code.determine_data import determine_city, determine_forecast_type
 from basic_code.formatter import format_full_response, format_short_response
 import prompt
 

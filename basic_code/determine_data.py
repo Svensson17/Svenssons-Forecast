@@ -3,8 +3,11 @@ import requests
 
 
 def determine_city():
-    city = prompt.string("What city do you want to check? ")
-    return city
+    while True:
+        city = prompt.string("What city do you want to check? ")
+        if verify_city(city):
+            return city
+        print('Please,type the right city')
 
 
 def determine_forecast_type(city):
@@ -23,4 +26,4 @@ def verify_city(city):
     }
     response = requests.request("GET", url, headers=headers, data=payload)
     status_code = response.status_code
-    return status_code
+    return True if status_code == 200 else False
