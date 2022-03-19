@@ -1,6 +1,6 @@
 import prompt
 import requests
-from basic_code.const import key2
+from basic_code.const import verify_city_api_key
 
 
 def determine_city():
@@ -21,10 +21,6 @@ def determine_forecast_type(city):
 
 def verify_city(city):
     url = "https://api.apilayer.com/geo/city/name/{}".format(city)
-    payload = {}
-    headers = {
-        "apikey": key2
-    }
-    response = requests.get(url, headers=headers, data=payload)
-    status_code = response.status_code
-    return True if status_code == 200 else False
+    headers = {"apikey": verify_city_api_key}
+    response = requests.get(url, headers=headers)
+    return True if response.status_code == 200 else False

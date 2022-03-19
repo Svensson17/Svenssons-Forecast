@@ -1,2 +1,2 @@
-key1 = '609bbe56a6793ee128b3e9e72e9b4f97'
-key2 = "ycvkBrGzaM6Dwzq5hXGbBzh6BCsj9G6s"
+forecast_api_key = '609bbe56a6793ee128b3e9e72e9b4f97'
+verify_city_api_key = "ycvkBrGzaM6Dwzq5hXGbBzh6BCsj9G6s"
