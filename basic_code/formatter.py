@@ -22,8 +22,23 @@ def format_full_response(item):
         'The wind speed is {0}, the direction is {1} degrees.'. format(
             item['wind']['speed'],
             item['wind']['deg']
-        )
+        )  # data for terminal
     )
+    return "The {0}'s coordinates are {1} lon, {2} lat.\
+    The country is {3}.The temperature is {4}, feels like {5} in Celsius.\
+    The sky is in {6}, the pressure is {7}.\
+    The wind speed is {8}, the direction is {9} degrees.".format(
+        item['name'],
+        item['coord']['lon'],
+        item['coord']['lat'],
+        item['sys']['country'],
+        item['main']['temp'],
+        item['main']['feels_like'],
+        item.get('weather')[0]['description'],
+        item['main']['pressure'],
+        item['wind']['speed'],
+        item['wind']['deg']
+    )  # data for flask
 
 
 def format_short_response(item):
@@ -31,3 +46,8 @@ def format_short_response(item):
     temp_item = item.get('main')
     print('The sky is in {}'.format(weather_item['description']))
     print('The temperature is {} Celsius'.format(temp_item['temp']))
+    # data for terminal
+    return 'The sky is in {}.The temperature is {} Celsius'.format(
+        weather_item['description'],
+        temp_item['temp']
+    )  # data for flask
