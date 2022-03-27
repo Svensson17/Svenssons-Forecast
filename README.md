@@ -1,1 +1,1 @@
-The forecast in short and full version by API.
+The forecast in short and full version by API. In terminal and browser

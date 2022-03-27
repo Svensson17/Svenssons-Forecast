@@ -1,5 +1,4 @@
-
-from basic_code.download_inf import download
+from basic_code.load_data import load_for_terminal
 import logging
 import sys
 
@@ -7,7 +6,7 @@ import sys
 def main():
     logging.basicConfig(level=logging.INFO)
     try:
-        download()
+        load_for_terminal()
     except Exception as e:
         logging.error(e)
         sys.exit(1)

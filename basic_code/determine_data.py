@@ -24,3 +24,13 @@ def verify_city(city):
     headers = {"apikey": verify_city_api_key}
     response = requests.get(url, headers=headers)
     return True if response.status_code == 200 else False
+
+
+def determine_forecast_data(city, api_key):
+    response_api = requests.get(
+        "http://api.openweathermap.org/data/2.5/weather?q={0}&appid={1}&units=metric".format(
+            city, api_key
+        )
+    )
+    current_inf = response_api.json()
+    return current_inf

@@ -6,9 +6,24 @@
 </head>
 <body>
     <div>
-        <ul>
-            {{item}}
-        </ul>
+        {% if item['format_type'] == 'short' %}
+            <ul>
+                <li>{{item['description']}}</li>
+                <li>{{item['temperature']}}</li>
+            </ul>
+        {% elif item['city'] == 'No such city. Please, try again' %}
+            <ul>
+                <li>{{item['city']}}</li>
+            </ul>
+        {% else%}
+            <ul>
+                <li>{{item['coordinates']}}</li>
+                <li>{{item['country']}}</li>
+                <li>{{item['temperature']}}</li>
+                <li>{{item['sky']}}</li>
+                <li>{{item['wind']}}</li>
+            </ul>
+        {% endif %}
     </div>
 </body>
 </html>
